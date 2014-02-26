@@ -1,0 +1,761 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masterModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="DaThu" EntityType="masterModel.Store.DaThu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Decaptcha" EntityType="masterModel.Store.Decaptcha" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MatKhau" EntityType="masterModel.Store.MatKhau" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MSreplication_options" EntityType="masterModel.Store.MSreplication_options" store:Type="Tables" store:Schema="dbo" store:Name="MSreplication_options">
+            <DefiningQuery>SELECT 
+      [MSreplication_options].[optname] AS [optname], 
+      [MSreplication_options].[value] AS [value], 
+      [MSreplication_options].[major_version] AS [major_version], 
+      [MSreplication_options].[minor_version] AS [minor_version], 
+      [MSreplication_options].[revision] AS [revision], 
+      [MSreplication_options].[install_failures] AS [install_failures]
+      FROM [dbo].[MSreplication_options] AS [MSreplication_options]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NhanVat" EntityType="masterModel.Store.NhanVat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="spt_fallback_db" EntityType="masterModel.Store.spt_fallback_db" store:Type="Tables" store:Schema="dbo" store:Name="spt_fallback_db">
+            <DefiningQuery>SELECT 
+      [spt_fallback_db].[xserver_name] AS [xserver_name], 
+      [spt_fallback_db].[xdttm_ins] AS [xdttm_ins], 
+      [spt_fallback_db].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+      [spt_fallback_db].[xfallback_dbid] AS [xfallback_dbid], 
+      [spt_fallback_db].[name] AS [name], 
+      [spt_fallback_db].[dbid] AS [dbid], 
+      [spt_fallback_db].[status] AS [status], 
+      [spt_fallback_db].[version] AS [version]
+      FROM [dbo].[spt_fallback_db] AS [spt_fallback_db]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_fallback_dev" EntityType="masterModel.Store.spt_fallback_dev" store:Type="Tables" store:Schema="dbo" store:Name="spt_fallback_dev">
+            <DefiningQuery>SELECT 
+      [spt_fallback_dev].[xserver_name] AS [xserver_name], 
+      [spt_fallback_dev].[xdttm_ins] AS [xdttm_ins], 
+      [spt_fallback_dev].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+      [spt_fallback_dev].[xfallback_low] AS [xfallback_low], 
+      [spt_fallback_dev].[xfallback_drive] AS [xfallback_drive], 
+      [spt_fallback_dev].[low] AS [low], 
+      [spt_fallback_dev].[high] AS [high], 
+      [spt_fallback_dev].[status] AS [status], 
+      [spt_fallback_dev].[name] AS [name], 
+      [spt_fallback_dev].[phyname] AS [phyname]
+      FROM [dbo].[spt_fallback_dev] AS [spt_fallback_dev]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_fallback_usg" EntityType="masterModel.Store.spt_fallback_usg" store:Type="Tables" store:Schema="dbo" store:Name="spt_fallback_usg">
+            <DefiningQuery>SELECT 
+      [spt_fallback_usg].[xserver_name] AS [xserver_name], 
+      [spt_fallback_usg].[xdttm_ins] AS [xdttm_ins], 
+      [spt_fallback_usg].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+      [spt_fallback_usg].[xfallback_vstart] AS [xfallback_vstart], 
+      [spt_fallback_usg].[dbid] AS [dbid], 
+      [spt_fallback_usg].[segmap] AS [segmap], 
+      [spt_fallback_usg].[lstart] AS [lstart], 
+      [spt_fallback_usg].[sizepg] AS [sizepg], 
+      [spt_fallback_usg].[vstart] AS [vstart]
+      FROM [dbo].[spt_fallback_usg] AS [spt_fallback_usg]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_monitor" EntityType="masterModel.Store.spt_monitor" store:Type="Tables" store:Schema="dbo" store:Name="spt_monitor">
+            <DefiningQuery>SELECT 
+      [spt_monitor].[lastrun] AS [lastrun], 
+      [spt_monitor].[cpu_busy] AS [cpu_busy], 
+      [spt_monitor].[io_busy] AS [io_busy], 
+      [spt_monitor].[idle] AS [idle], 
+      [spt_monitor].[pack_received] AS [pack_received], 
+      [spt_monitor].[pack_sent] AS [pack_sent], 
+      [spt_monitor].[connections] AS [connections], 
+      [spt_monitor].[pack_errors] AS [pack_errors], 
+      [spt_monitor].[total_read] AS [total_read], 
+      [spt_monitor].[total_write] AS [total_write], 
+      [spt_monitor].[total_errors] AS [total_errors]
+      FROM [dbo].[spt_monitor] AS [spt_monitor]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_values" EntityType="masterModel.Store.spt_values" store:Type="Tables" store:Schema="dbo" store:Name="spt_values">
+            <DefiningQuery>SELECT 
+      [spt_values].[name] AS [name], 
+      [spt_values].[number] AS [number], 
+      [spt_values].[type] AS [type], 
+      [spt_values].[low] AS [low], 
+      [spt_values].[high] AS [high], 
+      [spt_values].[status] AS [status]
+      FROM [dbo].[spt_values] AS [spt_values]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TaiKhoan" EntityType="masterModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TenHienThi" EntityType="masterModel.Store.TenHienThi" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_DaThu_TaiKhoan" Association="masterModel.Store.FK_DaThu_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="DaThu" EntitySet="DaThu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVat_TaiKhoan" Association="masterModel.Store.FK_NhanVat_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="NhanVat" EntitySet="NhanVat" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DaThu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TaiKhoan" Type="int" />
+          <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThoiGian" Type="datetime" />
+          <Property Name="LoaiPass" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Decaptcha">
+          <Key>
+            <PropertyRef Name="Hash" />
+          </Key>
+          <Property Name="Hash" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Captcha" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MatKhau">
+          <Key>
+            <PropertyRef Name="Text" />
+          </Key>
+          <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Loai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'master.dbo.MSreplication_options' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MSreplication_options">
+          <Key>
+            <PropertyRef Name="optname" />
+            <PropertyRef Name="value" />
+            <PropertyRef Name="major_version" />
+            <PropertyRef Name="minor_version" />
+            <PropertyRef Name="revision" />
+            <PropertyRef Name="install_failures" />
+          </Key>
+          <Property Name="optname" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="value" Type="bit" Nullable="false" />
+          <Property Name="major_version" Type="int" Nullable="false" />
+          <Property Name="minor_version" Type="int" Nullable="false" />
+          <Property Name="revision" Type="int" Nullable="false" />
+          <Property Name="install_failures" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhanVat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MaTaiKhoan" Type="int" />
+          <Property Name="TenNhanVat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reset" Type="int" />
+          <Property Name="Relife" Type="int" />
+          <Property Name="ResetTrongNgay" Type="int" />
+          <Property Name="ResetTrongThang" Type="int" />
+          <Property Name="ChungToc" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaDiem" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'master.dbo.spt_fallback_db' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="spt_fallback_db">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="version" />
+          </Key>
+          <Property Name="xserver_name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+          <Property Name="xfallback_dbid" Type="smallint" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="dbid" Type="smallint" Nullable="false" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="version" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'master.dbo.spt_fallback_dev' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="spt_fallback_dev">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="low" />
+            <PropertyRef Name="high" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="phyname" />
+          </Key>
+          <Property Name="xserver_name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+          <Property Name="xfallback_low" Type="int" />
+          <Property Name="xfallback_drive" Type="char" MaxLength="2" />
+          <Property Name="low" Type="int" Nullable="false" />
+          <Property Name="high" Type="int" Nullable="false" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="phyname" Type="varchar" Nullable="false" MaxLength="127" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'master.dbo.spt_fallback_usg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="spt_fallback_usg">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="segmap" />
+            <PropertyRef Name="lstart" />
+            <PropertyRef Name="sizepg" />
+            <PropertyRef Name="vstart" />
+          </Key>
+          <Property Name="xserver_name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+          <Property Name="xfallback_vstart" Type="int" />
+          <Property Name="dbid" Type="smallint" Nullable="false" />
+          <Property Name="segmap" Type="int" Nullable="false" />
+          <Property Name="lstart" Type="int" Nullable="false" />
+          <Property Name="sizepg" Type="int" Nullable="false" />
+          <Property Name="vstart" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="spt_monitor">
+          <Key>
+            <PropertyRef Name="lastrun" />
+            <PropertyRef Name="cpu_busy" />
+            <PropertyRef Name="io_busy" />
+            <PropertyRef Name="idle" />
+            <PropertyRef Name="pack_received" />
+            <PropertyRef Name="pack_sent" />
+            <PropertyRef Name="connections" />
+            <PropertyRef Name="pack_errors" />
+            <PropertyRef Name="total_read" />
+            <PropertyRef Name="total_write" />
+            <PropertyRef Name="total_errors" />
+          </Key>
+          <Property Name="lastrun" Type="datetime" Nullable="false" />
+          <Property Name="cpu_busy" Type="int" Nullable="false" />
+          <Property Name="io_busy" Type="int" Nullable="false" />
+          <Property Name="idle" Type="int" Nullable="false" />
+          <Property Name="pack_received" Type="int" Nullable="false" />
+          <Property Name="pack_sent" Type="int" Nullable="false" />
+          <Property Name="connections" Type="int" Nullable="false" />
+          <Property Name="pack_errors" Type="int" Nullable="false" />
+          <Property Name="total_read" Type="int" Nullable="false" />
+          <Property Name="total_write" Type="int" Nullable="false" />
+          <Property Name="total_errors" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="spt_values">
+          <Key>
+            <PropertyRef Name="number" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="35" />
+          <Property Name="number" Type="int" Nullable="false" />
+          <Property Name="type" Type="nchar" Nullable="false" MaxLength="3" />
+          <Property Name="low" Type="int" />
+          <Property Name="high" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
+          <Property Name="MatKhau1" Type="nvarchar" MaxLength="50" />
+          <Property Name="MatKhau2" Type="nvarchar" MaxLength="50" />
+          <Property Name="MatKhauGame" Type="nvarchar" MaxLength="50" />
+          <Property Name="TonTai" Type="bit" />
+          <Property Name="GCent" Type="decimal" />
+          <Property Name="VCent" Type="decimal" />
+          <Property Name="Chao" Type="decimal" />
+          <Property Name="Cre" Type="decimal" />
+          <Property Name="Blue" Type="decimal" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="200" />
+          <Property Name="LanCapNhatCuoi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TenHienThi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_DaThu_TaiKhoan">
+          <End Role="TaiKhoan" Type="masterModel.Store.TaiKhoan" Multiplicity="0..1" />
+          <End Role="DaThu" Type="masterModel.Store.DaThu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaThu">
+              <PropertyRef Name="TaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVat_TaiKhoan">
+          <End Role="TaiKhoan" Type="masterModel.Store.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhanVat" Type="masterModel.Store.NhanVat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NhanVat">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="RemoveDup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_MScleanupmergepublisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_MSrepl_startup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DaThus" EntityType="masterModel.DaThu" />
+          <EntitySet Name="Decaptchas" EntityType="masterModel.Decaptcha" />
+          <EntitySet Name="MatKhaus" EntityType="masterModel.MatKhau" />
+          <EntitySet Name="MSreplication_options" EntityType="masterModel.MSreplication_options" />
+          <EntitySet Name="NhanVats" EntityType="masterModel.NhanVat" />
+          <EntitySet Name="spt_fallback_db" EntityType="masterModel.spt_fallback_db" />
+          <EntitySet Name="spt_fallback_dev" EntityType="masterModel.spt_fallback_dev" />
+          <EntitySet Name="spt_fallback_usg" EntityType="masterModel.spt_fallback_usg" />
+          <EntitySet Name="spt_monitor" EntityType="masterModel.spt_monitor" />
+          <EntitySet Name="spt_values" EntityType="masterModel.spt_values" />
+          <EntitySet Name="TaiKhoans" EntityType="masterModel.TaiKhoan" />
+          <EntitySet Name="TenHienThis" EntityType="masterModel.TenHienThi" />
+          <AssociationSet Name="FK_DaThu_TaiKhoan" Association="masterModel.FK_DaThu_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="DaThu" EntitySet="DaThus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVat_TaiKhoan" Association="masterModel.FK_NhanVat_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="NhanVat" EntitySet="NhanVats" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DaThu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaiKhoan" Type="Int32" />
+          <Property Name="MatKhau" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ThoiGian" Type="DateTime" />
+          <Property Name="LoaiPass" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TaiKhoan1" Relationship="masterModel.FK_DaThu_TaiKhoan" FromRole="DaThu" ToRole="TaiKhoan" />
+        </EntityType>
+        <EntityType Name="Decaptcha">
+          <Key>
+            <PropertyRef Name="Hash" />
+          </Key>
+          <Property Name="Hash" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Captcha" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MatKhau">
+          <Key>
+            <PropertyRef Name="Text" />
+          </Key>
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Loai" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MSreplication_options">
+          <Key>
+            <PropertyRef Name="optname" />
+            <PropertyRef Name="value" />
+            <PropertyRef Name="major_version" />
+            <PropertyRef Name="minor_version" />
+            <PropertyRef Name="revision" />
+            <PropertyRef Name="install_failures" />
+          </Key>
+          <Property Name="optname" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="value" Type="Boolean" Nullable="false" />
+          <Property Name="major_version" Type="Int32" Nullable="false" />
+          <Property Name="minor_version" Type="Int32" Nullable="false" />
+          <Property Name="revision" Type="Int32" Nullable="false" />
+          <Property Name="install_failures" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhanVat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaTaiKhoan" Type="Int32" />
+          <Property Name="TenNhanVat" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Reset" Type="Int32" />
+          <Property Name="Relife" Type="Int32" />
+          <Property Name="ResetTrongNgay" Type="Int32" />
+          <Property Name="ResetTrongThang" Type="Int32" />
+          <Property Name="ChungToc" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DiaDiem" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TaiKhoan" Relationship="masterModel.FK_NhanVat_TaiKhoan" FromRole="NhanVat" ToRole="TaiKhoan" />
+        </EntityType>
+        <EntityType Name="spt_fallback_db">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="version" />
+          </Key>
+          <Property Name="xserver_name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="xdttm_ins" Type="DateTime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" />
+          <Property Name="xfallback_dbid" Type="Int16" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="dbid" Type="Int16" Nullable="false" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="version" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spt_fallback_dev">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="low" />
+            <PropertyRef Name="high" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="phyname" />
+          </Key>
+          <Property Name="xserver_name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="xdttm_ins" Type="DateTime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" />
+          <Property Name="xfallback_low" Type="Int32" />
+          <Property Name="xfallback_drive" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="low" Type="Int32" Nullable="false" />
+          <Property Name="high" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="phyname" Type="String" Nullable="false" MaxLength="127" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="spt_fallback_usg">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="segmap" />
+            <PropertyRef Name="lstart" />
+            <PropertyRef Name="sizepg" />
+            <PropertyRef Name="vstart" />
+          </Key>
+          <Property Name="xserver_name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="xdttm_ins" Type="DateTime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" />
+          <Property Name="xfallback_vstart" Type="Int32" />
+          <Property Name="dbid" Type="Int16" Nullable="false" />
+          <Property Name="segmap" Type="Int32" Nullable="false" />
+          <Property Name="lstart" Type="Int32" Nullable="false" />
+          <Property Name="sizepg" Type="Int32" Nullable="false" />
+          <Property Name="vstart" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spt_monitor">
+          <Key>
+            <PropertyRef Name="lastrun" />
+            <PropertyRef Name="cpu_busy" />
+            <PropertyRef Name="io_busy" />
+            <PropertyRef Name="idle" />
+            <PropertyRef Name="pack_received" />
+            <PropertyRef Name="pack_sent" />
+            <PropertyRef Name="connections" />
+            <PropertyRef Name="pack_errors" />
+            <PropertyRef Name="total_read" />
+            <PropertyRef Name="total_write" />
+            <PropertyRef Name="total_errors" />
+          </Key>
+          <Property Name="lastrun" Type="DateTime" Nullable="false" />
+          <Property Name="cpu_busy" Type="Int32" Nullable="false" />
+          <Property Name="io_busy" Type="Int32" Nullable="false" />
+          <Property Name="idle" Type="Int32" Nullable="false" />
+          <Property Name="pack_received" Type="Int32" Nullable="false" />
+          <Property Name="pack_sent" Type="Int32" Nullable="false" />
+          <Property Name="connections" Type="Int32" Nullable="false" />
+          <Property Name="pack_errors" Type="Int32" Nullable="false" />
+          <Property Name="total_read" Type="Int32" Nullable="false" />
+          <Property Name="total_write" Type="Int32" Nullable="false" />
+          <Property Name="total_errors" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spt_values">
+          <Key>
+            <PropertyRef Name="number" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="low" Type="Int32" />
+          <Property Name="high" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MatKhau1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MatKhau2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MatKhauGame" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TonTai" Type="Boolean" />
+          <Property Name="GCent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VCent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Chao" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Cre" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Blue" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GhiChu" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="LanCapNhatCuoi" Type="DateTime" />
+          <NavigationProperty Name="DaThus" Relationship="masterModel.FK_DaThu_TaiKhoan" FromRole="TaiKhoan" ToRole="DaThu" />
+          <NavigationProperty Name="NhanVats" Relationship="masterModel.FK_NhanVat_TaiKhoan" FromRole="TaiKhoan" ToRole="NhanVat" />
+        </EntityType>
+        <EntityType Name="TenHienThi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_DaThu_TaiKhoan">
+          <End Role="TaiKhoan" Type="masterModel.TaiKhoan" Multiplicity="0..1" />
+          <End Role="DaThu" Type="masterModel.DaThu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaThu">
+              <PropertyRef Name="TaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVat_TaiKhoan">
+          <End Role="TaiKhoan" Type="masterModel.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhanVat" Type="masterModel.NhanVat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NhanVat">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+          <EntitySetMapping Name="DaThus">
+            <EntityTypeMapping TypeName="masterModel.DaThu">
+              <MappingFragment StoreEntitySet="DaThu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="LoaiPass" ColumnName="LoaiPass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Decaptchas">
+            <EntityTypeMapping TypeName="masterModel.Decaptcha">
+              <MappingFragment StoreEntitySet="Decaptcha">
+                <ScalarProperty Name="Hash" ColumnName="Hash" />
+                <ScalarProperty Name="Captcha" ColumnName="Captcha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MatKhaus">
+            <EntityTypeMapping TypeName="masterModel.MatKhau">
+              <MappingFragment StoreEntitySet="MatKhau">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Loai" ColumnName="Loai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MSreplication_options">
+            <EntityTypeMapping TypeName="masterModel.MSreplication_options">
+              <MappingFragment StoreEntitySet="MSreplication_options">
+                <ScalarProperty Name="optname" ColumnName="optname" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="major_version" ColumnName="major_version" />
+                <ScalarProperty Name="minor_version" ColumnName="minor_version" />
+                <ScalarProperty Name="revision" ColumnName="revision" />
+                <ScalarProperty Name="install_failures" ColumnName="install_failures" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhanVats">
+            <EntityTypeMapping TypeName="masterModel.NhanVat">
+              <MappingFragment StoreEntitySet="NhanVat">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+                <ScalarProperty Name="TenNhanVat" ColumnName="TenNhanVat" />
+                <ScalarProperty Name="Reset" ColumnName="Reset" />
+                <ScalarProperty Name="Relife" ColumnName="Relife" />
+                <ScalarProperty Name="ResetTrongNgay" ColumnName="ResetTrongNgay" />
+                <ScalarProperty Name="ResetTrongThang" ColumnName="ResetTrongThang" />
+                <ScalarProperty Name="ChungToc" ColumnName="ChungToc" />
+                <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_fallback_db">
+            <EntityTypeMapping TypeName="masterModel.spt_fallback_db">
+              <MappingFragment StoreEntitySet="spt_fallback_db">
+                <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+                <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+                <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+                <ScalarProperty Name="xfallback_dbid" ColumnName="xfallback_dbid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="dbid" ColumnName="dbid" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="version" ColumnName="version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_fallback_dev">
+            <EntityTypeMapping TypeName="masterModel.spt_fallback_dev">
+              <MappingFragment StoreEntitySet="spt_fallback_dev">
+                <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+                <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+                <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+                <ScalarProperty Name="xfallback_low" ColumnName="xfallback_low" />
+                <ScalarProperty Name="xfallback_drive" ColumnName="xfallback_drive" />
+                <ScalarProperty Name="low" ColumnName="low" />
+                <ScalarProperty Name="high" ColumnName="high" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phyname" ColumnName="phyname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_fallback_usg">
+            <EntityTypeMapping TypeName="masterModel.spt_fallback_usg">
+              <MappingFragment StoreEntitySet="spt_fallback_usg">
+                <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+                <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+                <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+                <ScalarProperty Name="xfallback_vstart" ColumnName="xfallback_vstart" />
+                <ScalarProperty Name="dbid" ColumnName="dbid" />
+                <ScalarProperty Name="segmap" ColumnName="segmap" />
+                <ScalarProperty Name="lstart" ColumnName="lstart" />
+                <ScalarProperty Name="sizepg" ColumnName="sizepg" />
+                <ScalarProperty Name="vstart" ColumnName="vstart" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_monitor">
+            <EntityTypeMapping TypeName="masterModel.spt_monitor">
+              <MappingFragment StoreEntitySet="spt_monitor">
+                <ScalarProperty Name="lastrun" ColumnName="lastrun" />
+                <ScalarProperty Name="cpu_busy" ColumnName="cpu_busy" />
+                <ScalarProperty Name="io_busy" ColumnName="io_busy" />
+                <ScalarProperty Name="idle" ColumnName="idle" />
+                <ScalarProperty Name="pack_received" ColumnName="pack_received" />
+                <ScalarProperty Name="pack_sent" ColumnName="pack_sent" />
+                <ScalarProperty Name="connections" ColumnName="connections" />
+                <ScalarProperty Name="pack_errors" ColumnName="pack_errors" />
+                <ScalarProperty Name="total_read" ColumnName="total_read" />
+                <ScalarProperty Name="total_write" ColumnName="total_write" />
+                <ScalarProperty Name="total_errors" ColumnName="total_errors" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_values">
+            <EntityTypeMapping TypeName="masterModel.spt_values">
+              <MappingFragment StoreEntitySet="spt_values">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="low" ColumnName="low" />
+                <ScalarProperty Name="high" ColumnName="high" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaiKhoans">
+            <EntityTypeMapping TypeName="masterModel.TaiKhoan">
+              <MappingFragment StoreEntitySet="TaiKhoan">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="MatKhau1" ColumnName="MatKhau1" />
+                <ScalarProperty Name="MatKhau2" ColumnName="MatKhau2" />
+                <ScalarProperty Name="MatKhauGame" ColumnName="MatKhauGame" />
+                <ScalarProperty Name="TonTai" ColumnName="TonTai" />
+                <ScalarProperty Name="GCent" ColumnName="GCent" />
+                <ScalarProperty Name="VCent" ColumnName="VCent" />
+                <ScalarProperty Name="Chao" ColumnName="Chao" />
+                <ScalarProperty Name="Cre" ColumnName="Cre" />
+                <ScalarProperty Name="Blue" ColumnName="Blue" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="LanCapNhatCuoi" ColumnName="LanCapNhatCuoi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TenHienThis">
+            <EntityTypeMapping TypeName="masterModel.TenHienThi">
+              <MappingFragment StoreEntitySet="TenHienThi">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="masterModel.DaThu" Width="1.5" PointX="3" PointY="1.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Decaptcha" Width="1.5" PointX="5.75" PointY="0.75" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.MatKhau" Width="1.5" PointX="5.75" PointY="3.75" Height="1.4033821614583322" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.MSreplication_options" Width="1.5" PointX="5.75" PointY="6.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.NhanVat" Width="1.5" PointX="3" PointY="4" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_db" Width="1.5" PointX="7.75" PointY="0.75" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_dev" Width="1.5" PointX="0.75" PointY="7.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_usg" Width="1.5" PointX="2.75" PointY="7.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_monitor" Width="1.5" PointX="7.75" PointY="4.75" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_values" Width="1.5" PointX="7.75" PointY="8.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="2.125" Height="3.9033007812500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.TenHienThi" Width="1.5" PointX="9.75" PointY="0.75" Height="1.4033821614583317" IsExpanded="true" />
+        <AssociationConnector Association="masterModel.FK_DaThu_TaiKhoan" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.7112939453125" />
+          <ConnectorPoint PointX="3" PointY="2.7112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="masterModel.FK_NhanVat_TaiKhoan" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.0141503906250016" />
+          <ConnectorPoint PointX="3" PointY="5.0141503906250016" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
